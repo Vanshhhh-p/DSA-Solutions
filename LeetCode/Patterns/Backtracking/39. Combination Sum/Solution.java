@@ -18,7 +18,7 @@ class Solution {
         // backtracking wala step
         output.remove(output.size() - 1);
 
-        // include
+        // exclude
         solve(candidates , target , index + 1, ans , output);
     }
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
