@@ -1,6 +1,6 @@
 # 📝 39. Combination Sum (LeetCode)
 
-🔗 [Problem Link](https://leetcode.com/problems/combination-sum)
+🔗 [Problem Link](https://leetcode.com/problems/combination-sum/)
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-orange) ![Language](https://img.shields.io/badge/Language-Java-blue)
 
@@ -8,8 +8,8 @@
 Array, Backtracking
 
 ### 🚀 Performance
-- **Runtime:** N/A
-- **Memory:** N/A
+- **Runtime:** 3 ms
+- **Memory:** 45.1 MB
 
 ---
 
