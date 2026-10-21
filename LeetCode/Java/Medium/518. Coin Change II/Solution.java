@@ -1,31 +1,29 @@
 class Solution {
-    static void solve (int[] coins , int amount, int index , List<List<Integer>> ans ,List<Integer> output) {
+    static int solve (int amount, int[] coins, int index) {
         // base case
-               if (amount == 0) {
-                   // target 0 ka mltb meri output wali list me ek answer bn chuka h 
-                   // then store this ans into ans wali list
-                   ans.add(new ArrayList(output));
-                   return;
-               }
+        if (amount == 0) {
+            return 1;
+        }
 
-               if (index >= coins.length || amount < 0) return;
+        if (amount < 0 ) return 0;
+        if (index >= coins.length) return 0;
 
-               // include - exclude pattern
-               // include 
-               output.add(coins[index]);
-               solve(coins, amount - coins[index] , index , ans , output);
-               // backtracking wala step
-               output.remove(output.size() - 1);
-               // exclude
-               solve(coins , amount , index + 1, ans , output);
+        // include - exclude pattern 
+        // include 
+        // if coin value -> 5 , and amount value -> 40
+        // if i include coin 5
+        // remaining amount -> 35
+        int includeAns = solve (amount - coins[index] , coins , index);
+
+        // if i not include 5 than amoount will not change and the index must incerement
+        int excludeAns = solve (amount, coins, index+1);
+
+        int finalAns = includeAns + excludeAns;
+        return finalAns;
     }
     public int change(int amount ,int coins[]) {
-        Arrays.sort(coins);
-        List<List<Integer>> ans = new ArrayList<>();
-        List<Integer> output = new ArrayList<>();
         int index = 0;
-
-        solve (coins , amount , index ,ans, output);
-        return ans.size();
+        int ans = solve (amount , coins , index);
+        return ans;
     }
 }
