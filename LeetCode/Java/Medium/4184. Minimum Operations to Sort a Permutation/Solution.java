@@ -1,88 +1,42 @@
 
-import java.util.*;
-
 class Solution {
-
-    static void reverse(int[] nums) {
-        int left = 0;
-        int right = nums.length - 1;
-
-        while (left < right) {
-            int temp = nums[left];
-            nums[left] = nums[right];
-            nums[right] = temp;
-
-            left++;
-            right--;
-        }
-    }
-
-    static int solve(int[] nums, boolean reversed) {
+    public int minOperations(int[] nums) {
         int n = nums.length;
-        ArrayList<Integer> v = new ArrayList<>();
 
-        // Double the array to check circular sequences
-        for (int x : nums) {
-            v.add(x);
-        }
-        for (int x : nums) {
-            v.add(x);
+        // Case 1: nums is a rotation of increasing order
+        int start = nums[0];
+        boolean increasing = true;
+
+        for (int i = 0; i < n; i++) {
+            if (nums[i] != (start + i) % n) {
+                increasing = false;
+                break;
+            }
         }
 
         int ans = Integer.MAX_VALUE;
-        int count = 1;
 
-        // Check increasing consecutive sequence
-        for (int i = 1; i < v.size(); i++) {
-            if (v.get(i) == v.get(i - 1) + 1) {
-                count++;
-            } else {
-                count = 1;
-            }
-
-            if (count >= n) {
-                int start = i - n + 1;
-                int rotations = (n - start) % n;
-
-                ans = Math.min(ans, rotations + (reversed ? 1 : 0));
-            }
+        if (increasing) {
+            // Rotate left directly, or use two reversals
+            ans = Math.min((n - start) % n, start + 2);
         }
 
-        // Check decreasing consecutive sequence in original array
-        if (!reversed) {
-            count = 1;
+        // Case 2: nums is a rotation of decreasing order
+        int shift = n - 1 - nums[0];
+        boolean decreasing = true;
 
-            for (int i = 1; i < v.size(); i++) {
-                if (v.get(i) == v.get(i - 1) - 1) {
-                    count++;
-                } else {
-                    count = 1;
-                }
-
-                if (count >= n) {
-                    int start = i - n + 1;
-                    int rotations = (n - start) % n;
-
-                    ans = Math.min(ans, rotations + 1);
-                }
+        for (int i = 0; i < n; i++) {
+            if (nums[i] != n - 1 - ((i + shift) % n)) {
+                decreasing = false;
+                break;
             }
         }
 
-        return ans;
-    }
-
-    public int minOperations(int[] nums) {
-        if (nums.length == 1) {
-            return 0;
+        if (decreasing) {
+            // Reverse and rotate, choosing the cheaper direction
+            int rotations = (n - shift) % n;
+            ans = Math.min(ans, 1 + Math.min(shift, rotations));
         }
-
-        int ans = solve(nums, false);
-
-        // Reverse the array and check again
-        reverse(nums);
-
-        int reversedAns = solve(nums, true);
-        ans = Math.min(ans, reversedAns);
 
         return ans == Integer.MAX_VALUE ? -1 : ans;
     }
