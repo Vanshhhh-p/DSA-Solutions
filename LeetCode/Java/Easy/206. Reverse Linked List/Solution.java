@@ -9,26 +9,26 @@
  * }
  */
 class Solution {
+    static ListNode solve (ListNode prev , ListNode curr) {
+        // Base case 
+        if (curr == null) return prev;
+
+        // 1 case main karega , baaki recursion sambhal lega
+        ListNode forward = curr.next;
+        curr.next = prev;
+
+        // move prev and curr one step ahead
+        prev = curr;
+        curr = forward;
+
+        // recursion call
+        ListNode ans = solve(prev , curr);
+        return ans;
+    }
     public ListNode reverseList(ListNode head) {
-        // if (head == null || head.next == null) return head;
-
-        // ListNode newHead = reverseList(head.next);
-
-        // head.next.next = head;
-        // head.next = null;
-        // return newHead;
-
         ListNode prev = null;
-        ListNode after = null;
         ListNode curr = head;
-
-        while (curr != null) {
-            after = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = after;
-        }
-        return prev;
-
+        ListNode ans = solve (prev , curr);
+        return ans;
     }
 }
