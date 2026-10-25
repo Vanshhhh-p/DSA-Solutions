@@ -3,7 +3,7 @@
 Track your progress on the Curated 100hrs Advanced DSA interview preparation list.
 
 ## Progress
-- **Completed:** 7 / 65 (10.8%)
+- **Completed:** 8 / 65 (12.3%)
 
 ---
 
@@ -19,7 +19,7 @@ Track your progress on the Curated 100hrs Advanced DSA interview preparation lis
 - [ ] Convert Binary Number in a Linked List to Integer
 
 ### 📂 Module  1.2: Insertion, Deletion & Posit
-- [ ] Remove Nth Node From End of List
+- [x] [Remove Nth Node From End of List](./Java/Medium/19. Remove Nth Node From End of List/)
 - [ ] Rotate List
 - [ ] Reverse Linked List II
 - [ ] Odd Even Linked List

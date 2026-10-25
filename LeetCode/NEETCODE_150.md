@@ -3,7 +3,7 @@
 Track your progress on the NeetCode 150 roadmap practice problems.
 
 ## Progress
-- **Completed:** 17 / 150 (11.3%)
+- **Completed:** 18 / 150 (12.0%)
 
 ---
 
@@ -57,7 +57,7 @@ Track your progress on the NeetCode 150 roadmap practice problems.
 - [x] [Reverse Linked List](./Java/Easy/206. Reverse Linked List/)
 - [x] [Merge Two Sorted Lists](./Java/Easy/21. Merge Two Sorted Lists/)
 - [ ] Reorder List
-- [ ] Remove Nth Node From End of List
+- [x] [Remove Nth Node From End of List](./Java/Medium/19. Remove Nth Node From End of List/)
 - [ ] Copy List with Random Pointer
 - [ ] Add Two Numbers
 - [x] [Linked List Cycle](./Java/Easy/141. Linked List Cycle/)
