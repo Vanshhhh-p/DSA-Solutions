@@ -9,29 +9,35 @@
  * }
  */
 class Solution {
-    public ListNode removeNthFromEnd(ListNode head, int n) {
-        int count = 0;
-        ListNode temp = head;
-    
-        while (temp != null) {
-            count++;
-            temp = temp.next;
-        }
-        if (n > count) return -1;
-        ListNode prev = head;
-        ListNode curr = head;
-        
-        // curr ko abhi k jumps karwane h 
-        for (int i = 1; i <= n; i++) {
-            if (curr != null) curr = curr.next;
-        }
-        
-        // first window is ready
-        // now i can move my window
-        while (curr != null) {
-            curr = curr.next;
-            prev = prev.next;
-        }
-        return prev.val;
-    }
+   public ListNode removeNthFromEnd(ListNode head, int n) {
+   if(head.next == null) {
+       return null;
+   }
+  
+  
+   int size = 0;
+   ListNode temp = head;
+   while(temp != null) {
+       temp = temp.next;
+       size++;
+   }
+  
+   //removing SIZEth node from last i.e. head
+   if(n == size) {
+       return head.next;
+   }
+  
+   //find previous node
+   int ptf = size - n; // position to find
+   ListNode prev = head; // previous node
+   int cp = 1; // current position
+  
+   while(cp != ptf) {
+       prev = prev.next;
+       cp++;
+   }
+  
+   prev.next = prev.next.next;
+   return head;
+ }
 }
