@@ -32,7 +32,7 @@ Track your progress on the Grind 75 coding interview preparation list.
 - [x] [Climbing Stairs](./Java/Easy/70. Climbing Stairs/)
 - [x] [Coin Change](./Java/Medium/322. Coin Change/)
 - [ ] Longest Increasing Subsequence
-- [x] [Longest Common Subsequence](./Java/Medium/1143. Longest Common Subsequence/)
+- [x] [Longest Common Subsequence](./Java/Medium/1250. Longest Common Subsequence/)
 - [ ] Word Break
 - [x] [Combination Sum](./Java/Medium/39. Combination Sum/)
 - [ ] House Robber

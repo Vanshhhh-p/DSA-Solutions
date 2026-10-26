@@ -95,7 +95,7 @@ Track your progress on the Striver's SDE Sheet top interview problems.
 - [ ] Course Schedule
 - [ ] Number of Islands
 - [ ] Longest Increasing Subsequence
-- [x] [Longest Common Subsequence](./Java/Medium/1143. Longest Common Subsequence/)
+- [x] [Longest Common Subsequence](./Java/Medium/1250. Longest Common Subsequence/)
 - [ ] 01 Knapsack
 - [ ] Edit Distance
 - [x] [Coin Change](./Java/Medium/322. Coin Change/)
