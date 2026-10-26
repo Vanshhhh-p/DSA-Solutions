@@ -11,42 +11,44 @@
  */
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        ListNode tempA = headA;
-        ListNode tempB = headB;
+        if (headA == null || headB == null) return null;
 
-        int lengthA = 0;
-        while(tempA != null ){
-            lengthA++;
-            tempA = tempA.next;
+        ListNode a = headA;
+        ListNode b = headB;
+
+        while (a != null && b != null) {
+            a = a.next;
+            b = b.next;
         }
 
-        int lengthB = 0;
-        while(tempB != null ){
-            lengthB++;
-            tempB = tempB.next;
-        }
-
-        tempA = headA;
-        tempB = headB;
-
-        if (lengthA > lengthB) {
-            int steps = lengthA - lengthB;
-            for (int i = 1; i <= steps; i++) {
-                tempA = tempA.next;
+        if (a == null) {
+            // Either b's length is bigger or equal to a
+            int bExtraLength = 0;
+            while (b != null) {
+                bExtraLength++;
+                b = b.next;
             }
+            while (bExtraLength-- > 0) headB = headB.next;
         }
         else {
-            int steps = lengthB - lengthA;
-            for (int i = 1; i <= steps; i++) {
-                tempB = tempB.next;
+            // Either a's length is bigger or equal to b
+            int aExtraLength = 0;
+            while (a != null) {
+                aExtraLength++;
+                a = a.next;
+            }
+            while (aExtraLength-- > 0) headA = headA.next;
+        }
+
+        while (headA != null && headB != null) {
+            if (headA == headB) {
+                return headA;
+            }
+            else {
+                headA = headA.next;
+                headB = headB.next;
             }
         }
-
-        while (tempA != tempB) {
-            tempA = tempA.next;
-            tempB = tempB.next;
-        }
-
-        return tempA;
+        return null;
     }
 }
