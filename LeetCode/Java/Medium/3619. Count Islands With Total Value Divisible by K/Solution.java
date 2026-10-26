@@ -2,17 +2,14 @@
 class Solution {
     int m, n;
 
-    int dfs(int[][] grid, int i, int j) {
-        // Boundary check and water/already visited
+    long dfs(int[][] grid, int i, int j) {
         if (i < 0 || j < 0 || i >= m || j >= n || grid[i][j] == 0) {
-            return 0;
+            return 0L;
         }
 
-        // Store value and mark visited
-        int sum = grid[i][j];
+        long sum = grid[i][j];
         grid[i][j] = 0;
 
-        // Visit all 4 directions
         sum += dfs(grid, i + 1, j);
         sum += dfs(grid, i - 1, j);
         sum += dfs(grid, i, j + 1);
@@ -30,7 +27,7 @@ class Solution {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] > 0) {
-                    int sum = dfs(grid, i, j);
+                    long sum = dfs(grid, i, j);
 
                     if (sum % k == 0) {
                         count++;
