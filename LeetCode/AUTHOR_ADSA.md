@@ -24,7 +24,7 @@ Track your progress on the Curated 100hrs Advanced DSA interview preparation lis
 - [ ] Reverse Linked List II
 - [x] [Odd Even Linked List](./Java/Medium/328. Odd Even Linked List/)
 - [ ] Merge In Between Linked Lists
-- [x] [Swapping Nodes in a Linked List](./Java/Medium/1721. Swapping Nodes in a Linked List/)
+- [x] [Swapping Nodes in a Linked List](./Java/Medium/528. Swapping Nodes in a Linked List/)
 - [ ] Delete the Middle Node of a Linked List
 
 ### 📂 Module  1.3: Duplicate Handling & List C
