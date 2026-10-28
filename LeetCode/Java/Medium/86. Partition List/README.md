@@ -1,6 +1,6 @@
 # 📝 86. Partition List (LeetCode)
 
-🔗 [Problem Link](https://leetcode.com/problems/partition-list)
+🔗 [Problem Link](https://leetcode.com/problems/partition-list/)
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-orange) ![Language](https://img.shields.io/badge/Language-Java-blue)
 
@@ -8,8 +8,8 @@
 Linked List, Two Pointers
 
 ### 🚀 Performance
-- **Runtime:** N/A
-- **Memory:** N/A
+- **Runtime:** 0 ms
+- **Memory:** 43.5 MB
 
 ---
 
