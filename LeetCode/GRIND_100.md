@@ -3,7 +3,7 @@
 Track your progress on the Grind 100 coding interview preparation list.
 
 ## Progress
-- **Completed:** 14 / 100 (14.0%)
+- **Completed:** 15 / 100 (15.0%)
 
 ---
 
@@ -45,7 +45,7 @@ Track your progress on the Grind 100 coding interview preparation list.
 - [x] [Reverse Linked List](./Java/Easy/206. Reverse Linked List/)
 - [x] [Palindrome Linked List](./Java/Easy/234. Palindrome Linked List/)
 - [x] [Linked List Cycle](./Java/Easy/141. Linked List Cycle/)
-- [ ] Linked List Cycle II
+- [x] [Linked List Cycle II](./Java/Medium/142. Linked List Cycle II/)
 - [x] [Merge Two Sorted Lists](./Java/Easy/21. Merge Two Sorted Lists/)
 - [x] [Remove Nth Node From End of List](./Java/Medium/19. Remove Nth Node From End of List/)
 - [x] [Intersection of Two Linked Lists](./Java/Easy/160. Intersection of Two Linked Lists/)
