@@ -1,4 +1,6 @@
 
+import java.util.*;
+
 class Solution {
     public int shortestPath(int n, int[][] edges, String labels, int k) {
 
@@ -12,39 +14,37 @@ class Solution {
             adj[e[0]].add(new int[]{e[1], e[2]});
         }
 
-        // dist[node][last character][consecutive count]
-        int[][][] dist = new int[n][26][k + 1];
+        if (k == 0) return -1;
 
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < 26; j++) {
-                Arrays.fill(dist[i][j], Integer.MAX_VALUE);
-            }
-        }
+        // Store only visited states
+        HashMap<Long, Long> dist = new HashMap<>();
 
-        PriorityQueue<int[]> pq = new PriorityQueue<>(
-            (a, b) -> Integer.compare(a[3], b[3])
+        PriorityQueue<long[]> pq = new PriorityQueue<>(
+            (a, b) -> Long.compare(a[2], b[2])
         );
 
-        int startChar = labels.charAt(0) - 'a';
+        // State: node, consecutive count, cost
+        long key = (long) (k + 1) * 0 + 1;
 
-        dist[0][startChar][1] = 0;
-        pq.offer(new int[]{0, startChar, 1, 0});
+        dist.put(key, 0L);
+        pq.offer(new long[]{0, 1, 0});
 
         while (!pq.isEmpty()) {
 
-            int[] curr = pq.poll();
+            long[] curr = pq.poll();
 
-            int node = curr[0];
-            int lastChar = curr[1];
-            int count = curr[2];
-            int cost = curr[3];
+            int node = (int) curr[0];
+            int count = (int) curr[1];
+            long cost = curr[2];
 
-            if (cost != dist[node][lastChar][count]) {
+            long currKey = (long) node * (k + 1L) + count;
+
+            if (dist.getOrDefault(currKey, Long.MAX_VALUE) != cost) {
                 continue;
             }
 
             if (node == n - 1) {
-                return cost;
+                return (int) cost;
             }
 
             for (int[] edge : adj[node]) {
@@ -52,28 +52,25 @@ class Solution {
                 int next = edge[0];
                 int weight = edge[1];
 
-                int ch = labels.charAt(next) - 'a';
-
                 int newCount;
 
-                if (ch == lastChar) {
+                if (labels.charAt(node) == labels.charAt(next)) {
                     newCount = count + 1;
                 } else {
                     newCount = 1;
                 }
 
-                if (newCount > k) {
-                    continue;
-                }
+                if (newCount > k) continue;
 
-                int newCost = cost + weight;
+                long newCost = cost + weight;
+                long newKey = (long) next * (k + 1L) + newCount;
 
-                if (newCost < dist[next][ch][newCount]) {
+                if (newCost < dist.getOrDefault(newKey, Long.MAX_VALUE)) {
 
-                    dist[next][ch][newCount] = newCost;
+                    dist.put(newKey, newCost);
 
-                    pq.offer(new int[]{
-                        next, ch, newCount, newCost
+                    pq.offer(new long[]{
+                        next, newCount, newCost
                     });
                 }
             }
