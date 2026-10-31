@@ -1,16 +1,22 @@
 class Solution {
     public int findDuplicate(int[] nums) {
-        HashMap<Integer , Integer> freq = new HashMap<>();
+        int slow = nums[0];
+        int fast = nums[0];
 
-        // Frequency Store
-        for (int num : nums) {
-            freq.put(num , freq.getOrDefault(num , 0) + 1);
+        // Find intersection point
+        do {
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        } while (slow != fast);
+
+        // Find the entrance of the cycle
+        slow = nums[0];
+
+        while (slow != fast) {
+            slow = nums[slow];
+            fast = nums[fast];
         }
 
-        for (int i : nums) {
-            if (freq.get(i) > 1) return i;
-        }
-
-        return -1;
+        return slow;
     }
 }
