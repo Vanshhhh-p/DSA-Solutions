@@ -1,4 +1,3 @@
-
 class Solution {
     public int uniquePaths(int[][] grid) {
         int m = grid.length;
@@ -44,7 +43,6 @@ class Solution {
                 }
             }
         }
-
         return (int) dp[m - 1][n - 1];
     }
 }
