@@ -1,6 +1,6 @@
 # 📝 125. Valid Palindrome (LeetCode)
 
-🔗 [Problem Link](https://leetcode.com/problems/valid-palindrome)
+🔗 [Problem Link](https://leetcode.com/problems/valid-palindrome/)
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Easy-brightgreen) ![Language](https://img.shields.io/badge/Language-Java-blue)
 
