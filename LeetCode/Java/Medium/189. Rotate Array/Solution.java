@@ -6,15 +6,19 @@ class Solution {
 
         k = k % n;
 
-        while (k > 0) {
-            int lastElement = nums[n - 1];
+        reverse(nums, 0, n - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, n - 1);
+    }
 
-            for (int i = n - 1; i >= 1; i--) {
-                nums[i] = nums[i - 1];
-            }
+    public void reverse(int[] nums, int i, int j) {
+        while (i < j) {
+            int temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
 
-            nums[0] = lastElement;
-            k--;
+            i++;
+            j--;
         }
     }
 }
