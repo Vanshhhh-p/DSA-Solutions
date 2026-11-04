@@ -1,6 +1,6 @@
 # 📝 75. Sort Colors (LeetCode)
 
-🔗 [Problem Link](https://leetcode.com/problems/sort-colors)
+🔗 [Problem Link](https://leetcode.com/problems/sort-colors/)
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-orange) ![Language](https://img.shields.io/badge/Language-Java-blue)
 
