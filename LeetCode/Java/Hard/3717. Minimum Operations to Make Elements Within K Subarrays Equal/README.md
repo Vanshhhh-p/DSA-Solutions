@@ -8,8 +8,8 @@
 Array, Hash Table, Math, Dynamic Programming, Sliding Window, Heap (Priority Queue)
 
 ### 🚀 Performance
-- **Runtime:** N/A
-- **Memory:** N/A
+- **Runtime:** 280 ms
+- **Memory:** 91.4 MB
 
 ---
 
