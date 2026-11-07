@@ -8,8 +8,8 @@
 Array, Heap (Priority Queue)
 
 ### 🚀 Performance
-- **Runtime:** N/A
-- **Memory:** N/A
+- **Runtime:** 241 ms
+- **Memory:** 169.1 MB
 
 ---
 
