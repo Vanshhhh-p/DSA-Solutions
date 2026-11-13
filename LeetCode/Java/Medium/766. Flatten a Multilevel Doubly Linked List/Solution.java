@@ -10,26 +10,21 @@ class Node {
 
 class Solution {
     public Node flatten(Node head) {
-        if (head == null || head.next == null) {
-            return head;
-        }
+        Node temp = head;
+        while (temp != null) {
+            Node t = temp.next;
+            if (temp.child != null) {
+                Node c = flatten (temp.child);
+                temp.next = c;
+                c.prev = temp;
 
-        Node p = head;
-        while (p != null) {
-            if (p.child == null) p = p.next;
-            else {
-                // p has a child 
-                Node temp = p.child;
-                while (temp.next != null) {
-                    temp = temp.next;
-                }
-                // We have to manipulate the links 
-                temp.next = p.next;
-                if (p.next != null) p.next.prev = temp;
-                p.next = p.child;
-                p.child.prev = p;
-                p.child = null;
+                // c ko aage le jao
+                while (c.next != null) c = c.next;
+                c.next  = t; 
+                if (t != null) t.prev = c;
             }
+            temp.child = null;
+            temp = t;
         }
         return head;
     }
