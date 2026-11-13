@@ -8,8 +8,8 @@
 Linked List, Depth-First Search, Doubly-Linked List
 
 ### 🚀 Performance
-- **Runtime:** N/A
-- **Memory:** N/A
+- **Runtime:** 75 ms
+- **Memory:** 42.6 MB
 
 ---
 
